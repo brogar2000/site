@@ -7,9 +7,11 @@ site_description: |
 
 repo_url: https://github.com/yggdrasil-sr/site
 edit_uri: edit/main/docs/
+remote_branch: main
 
 nav:
   - Home: index.md
+  - Design: design-document.md
 
 markdown_extensions:
   - def_list
