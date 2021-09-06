@@ -11,6 +11,7 @@ remote_branch: main
 
 nav:
   - Home: index.md
+  - Design: design-document.md
 
 markdown_extensions:
   - def_list
