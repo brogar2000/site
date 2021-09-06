@@ -6,6 +6,7 @@ site_description: |
   A modern, feature-rich screen reader for the Linux desktop, built in Rust.
 
 repo_url: https://github.com/yggdrasil-sr/site
+edit_uri: edit/main/docs/
 
 nav:
   - Home: index.md
