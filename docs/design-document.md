@@ -1,4 +1,4 @@
-#design of the yggdrasil screen reader
+# design of the yggdrasil screen reader
 
 ## links to currently available documentation
 
