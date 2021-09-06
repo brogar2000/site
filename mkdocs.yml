@@ -7,6 +7,9 @@ site_description: |
 
 repo_url: https://github.com/yggdrasil-sr/site
 
+nav:
+  - Home: index.md
+
 markdown_extensions:
   - def_list
   - codehilite
