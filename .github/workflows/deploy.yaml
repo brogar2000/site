@@ -19,7 +19,7 @@ jobs:
         with:
           repository: "yggdrasil-sr/yggdrasil-sr.github.io"
           path: "site"
-          token: ${{ secrets.GitHub_PAT }}
+          ssh-key: ${{ secrets.Deploy_SSH }}
 
       - name: Set up Python 3.7
         uses: actions/setup-python@v2
