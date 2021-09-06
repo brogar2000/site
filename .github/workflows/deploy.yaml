@@ -40,3 +40,4 @@ jobs:
           git add --all
           git commit -m "Regenerate site"
           git push
+
