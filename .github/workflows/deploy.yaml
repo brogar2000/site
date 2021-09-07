@@ -2,9 +2,9 @@ name: Build Site using MkDocs
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
@@ -17,8 +17,9 @@ jobs:
       - name: Checkout Github Pages Repo
         uses: actions/checkout@v2
         with:
-          repository: 'yggdrasil-sr/yggdrasil-sr.github.io'
-          path: '
+          repository: "yggdrasil-sr/yggdrasil-sr.github.io"
+          path: "site"
+          ssh-key: ${{ secrets.Deploy_SSH }}
 
       - name: Set up Python 3.7
         uses: actions/setup-python@v2
@@ -37,7 +38,6 @@ jobs:
           cd site
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add '.'
-          git commit -m 'Regenerate site'
+          git add .
+          git commit -m "Regenerate site"
           git push
-
