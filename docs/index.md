@@ -10,7 +10,7 @@ this project, we aim to provide a better screen reading experience than the one 
 A screen reader with all the modern features a Windows or macOS user would expect from their computers, including:
 
 - Object navigation
-- ocr
+- OCR
 - customisable navigation commands
 - a powerful add-on mechanism
 - and more.
@@ -21,7 +21,7 @@ A screen reader with all the modern features a Windows or macOS user would expec
 ## Why the Name?
 
 In viking mythology, [yggdrasil][wikipedia] is a huge tree around which the nine worlds gravitate. It's seen as a
-unifyer of everything, since its roots reach to the center of the earth. It's so large that parts of it exist in
+unifier of everything, since its roots reach to the center of the earth. It's so large that parts of it exist in
 other universes.
 
 We believe accessibility should unify people from across the globe to enjoy a product, with disability no longer
@@ -46,15 +46,15 @@ Flexible input and gesture system
 
 : Likewise, adding new functionality such as new keyboard commands should be easy enough, without needing to
 tinker with the source code of the screen reader. Manual editing of the configuration files as well as an
-intuitive grafical program to modify gestures and define new actions will be available.
+intuitive graphical program to modify gestures and define new actions will be available.
 
 Modern navigation patterns
 
 : In a perfect world, apps would just be accessible automatically,
 However, that's almost never the case. Therefore, visually impaired people rely on additional tools provided by
 their screen reader, such as object navigation, a way to explore the accessibility tree of an app without relying
-on focus, being then able to discover unfocusable elements that have important information nevertheless. We
-have this in [NVDA][nvda] and other screen readers, but not in Orca and as such, not in linux. Yggdrasil will
+on focus, being then able to discover unfocusable  elements that have important information nevertheless. We
+have this in [NVDA][nvda] and other screen readers, but not in Orca and as such, not in Linux. Yggdrasil will
 address that.
 
 [nvda]: https://www.nvaccess.org/
