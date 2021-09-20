@@ -12,6 +12,7 @@ remote_branch: main
 nav:
   - Home: index.md
   - Design: design-document.md
+  - Code: https://github.com/yggdrasil-sr
 
 markdown_extensions:
   - def_list
