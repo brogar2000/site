@@ -54,12 +54,24 @@ better than a non-disabled individual.
 
 ## announcements and news
 
-Here is the section where important announcements and news about yggdrasil's development will be published. Each section is delimited by a heading of level 3 or greater.
+Important announcements and news about Yggdrasil's development will be published here.
 
-### minimal speech system completed
+### Minimal speech-dispatcher Bindings Completed
 
-As of afew days ago, a minimal binding to speech dispatcher(the tts system for linux) was stabilised.  
-As you could anticipate by now, that means the speaking component of the screen reader is ready to be used, both in yggdrasil(when the at-spi components will be made) as well as in other crates that need linux only tts. In my view, that can't mean anything else but one step closer to the first yggdrasil prototype.
+As of afew days ago, a [minimal binding to speech-dispatcher][spd-rs] (the TTS system for Linux) was created, which
+wraps the C functions provided by [Nolan's `speech-dispatcher-sys` crate][spd-sys] in a safe Rust API. That means the
+speech component of Yggdrasil can now be implemented after the at-spi components are completed, as well as in other Rust
+projects that need Linux only TTS, or want more control than the [tts crate][tts-rs] gives them.
+
+These bindings are far from complete, but do provide the essential functionality, such as speaking text, characters and
+keys, and getting and setting voice parameters such as rate, pitch, and volume.
+
+In our view, that can't mean anything else but one step closer to the first Yggdrasil prototype!
+
+[spd-rs]: https://github.com/yggdrasil-sr/tts_subsystem
+[spd-sys]: https://github.com/ndarilek/speech-dispatcher-sys
+
+    [tts-rs]: https://github.com/ndarilek/tts-rs
 
 ## Under Active Development
 
