@@ -61,6 +61,30 @@ Here is the section where important announcements and news about yggdrasil's dev
 As of afew days ago, a minimal binding to speech dispatcher(the tts system for linux) was stabilised.  
 As you could anticipate by now, that means the speaking component of the screen reader is ready to be used, both in yggdrasil(when the at-spi components will be made) as well as in other crates that need linux only tts. In my view, that can't mean anything else but one step closer to the first yggdrasil prototype.
 
+###the first prototype has been released!
+
+We know it has been a long time, however we are delited to inform you that the first yggdrasil prototype is up on github, with a very early alpha stage build for anyone curious enough to try it out.  
+the screen reader can't do much at the moment, however this is what it can do so far
+
+* like any normal screen reader, it can read most components exposed by the linux accessibility interface, such as buttons, checkboxes, radio buttons, etc.  
+an exception to this is the webview controll and interacting with text boxes, though the latter might be implemented around the end of the week, if everything goes well.
+
+* some web elements can be navigated through and interacted with, for example links, buttons, checkboxes, forms, etc, even though text inside the webview and quick navigation doesn't work yet.
+
+As we all know, this is the first release of an alpha quality software, so feel free to report bugs by opening issues against the repository. However, here are some known issues that we will attempt to fix in the next couple releases, so no need to report those
+
+* sometimes, the name or text of a controll might not be announced, the speech saying something like ":button", mark the punctuation.  
+This is most likely caused by at-spi sending events to yggdrasil before the controlls actually finished loading, so the controll names and other attributes might not be filled in by the time yggdrasil gets the event, though they aren't null since the data exists somewhere, just didn't exist then.
+
+* if a controll uses something else than name or text to label itself, for example tooltips, yggdrasil won't pick those as valid ways of labeling, so it will either speak the same as described above, or it could even say unlabeled in some cases
+
+* currently, there's no other way to quit the screen reader but by sending it a keyboard interrupt sygnal, or killing the process in another way. This is so because of the binding generators we work with, they make stuff more complicated, so no keyboard handlers in this release.
+
+* on some machines, it's reported that the screen reader doesn't read window titles when cycling between them with alt+tab. Currently, we don't know why this is, but we're investigating still.
+
+The road to here was a very rough one indeed, however we are excited we could bring this to you, as demo quality as this is. This means much to us, it proves progress is being done, against all odds.  
+If you want to see more content from us, consider visiting our website more often, this way you won't lose anything. Furthermore, you will get information from the source of the project, so you can confirm its authenticity for yourself
+
 ## Under Active Development
 
 This website as well as the software itself is under active development, please check back at a later stage to
