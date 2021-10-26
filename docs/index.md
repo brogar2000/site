@@ -73,9 +73,13 @@ In our view, that can't mean anything else but one step closer to the first Yggd
 
     [tts-rs]: https://github.com/ndarilek/tts-rs
 
-###the first prototype has been released!
+### the first prototype has been released!
 
 We know it has been a long time, however we are delited to inform you that the first yggdrasil prototype is up on github, with a very early alpha stage build for anyone curious enough to try it out.  
+If you want to try it out, the link is here:
+
+<https://github.com/yggdrasil-sr/yggdrasil-prototype/releases/>
+
 the screen reader can't do much at the moment, however this is what it can do so far
 
 * like any normal screen reader, it can read most components exposed by the linux accessibility interface, such as buttons, checkboxes, radio buttons, etc.  
