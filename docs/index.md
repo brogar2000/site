@@ -7,7 +7,13 @@ reputation of being quite painful to use as a daily driver among disabled people
 
 Yggdrasil is a new project that aims to create a better Linux screen reader, written in [Rust][rust]. Through
 this project, we aim to provide a better screen reading experience than the one we currently have in [Orca][orca].
-A screen reader with all the modern features a Windows or macOS user would expect from their computers, some of which are outlined below.
+A screen reader with all the modern features a Windows or MacOS user would expect from their computers, some of which are outlined below.
+
+- Object navigation
+- OCR
+- customisable navigation commands
+- a powerful add-on mechanism
+- and more.
 
 [orca]: https://wiki.gnome.org/Projects/Orca
 [rust]: https://rust-lang.org/
@@ -17,7 +23,7 @@ A screen reader with all the modern features a Windows or macOS user would expec
 ### First-class addon support
 
 We want our users to be able to do anything they wish with our screen reader. Improving support for specific
-programs should ideally be doable without needing to modify yggdrasil's core code.
+programs should ideally be doable without needing to modify Yggdrasil's core code.
 
 We plan to make it easy to write addons primarily in [Lua][lua], with the option to use other languages such as
 [Rust][rust] in the future for higher performance.
@@ -28,22 +34,22 @@ We plan to make it easy to write addons primarily in [Lua][lua], with the option
 
 Likewise, adding new functionality such as new keyboard commands should be easy enough, without needing to
 tinker with the source code of the screen reader. Manual editing of the configuration files as well as an
-intuitive grafical program to modify gestures and define new actions will be available.
+intuitive graphical program to modify gestures and define new actions will be available.
 
 ### Modern navigation patterns
 
 In a perfect world, apps would just be accessible automatically, However, that's almost never the case. Therefore, visually impaired people rely on additional tools provided by
 their screen reader, such as object navigation, a way to explore the accessibility tree of an app without relying
 on focus, being then able to discover unfocusable elements that have important information nevertheless. We
-have this in [NVDA][nvda] and other screen readers, but not in Orca and as such, not in linux. Yggdrasil will
+have this in [NVDA][nvda] and other screen readers, but not in Orca and as such, not in Linux. Yggdrasil will
 address that.
 
 [nvda]: https://www.nvaccess.org/
 
 ## Why the Name?
 
-In norse mythology, [yggdrasil][wikipedia] is a huge tree around which the nine worlds gravitate. It's seen as a
-unifyer of everything, since its roots reach to the center of the earth. It's so large that parts of it exist in
+In Norse mythology, [Yggdrasil][wikipedia] is a huge tree around which the nine worlds gravitate. It's seen as a
+unifier of everything, since its roots reach to the center of the earth. It's so large that parts of it exist in
 other universes.
 
 Similarly to the tree of life that unifies everything, We believe accessibility should unify people from across the globe to enjoy a product, with disability no longer
@@ -52,13 +58,13 @@ better than a non-disabled individual.
 
 [wikipedia]: https://en.wikipedia.org/wiki/Yggdrasil
 
-## announcements and news
+## Announcements and News
 
 Important announcements and news about Yggdrasil's development will be published here.
 
 ### Minimal speech-dispatcher Bindings Completed
 
-As of afew days ago, a [minimal binding to speech-dispatcher][spd-rs] (the TTS system for Linux) was created, which
+As of a few days ago, a [minimal binding to speech-dispatcher][spd-rs] (the TTS system for Linux) was created, which
 wraps the C functions provided by [Nolan's `speech-dispatcher-sys` crate][spd-sys] in a safe Rust API. That means the
 speech component of Yggdrasil can now be implemented after the at-spi components are completed, as well as in other Rust
 projects that need Linux only TTS, or want more control than the [tts crate][tts-rs] gives them.
@@ -70,31 +76,31 @@ In our view, that can't mean anything else but one step closer to the first Yggd
 
 [spd-rs]: https://github.com/yggdrasil-sr/tts_subsystem
 [spd-sys]: https://github.com/ndarilek/speech-dispatcher-sys
+[tts-rs]: https://github.com/ndarilek/tts-rs
 
-    [tts-rs]: https://github.com/ndarilek/tts-rs
 
 ### the first prototype has been released!
 
-We know it has been a long time, however we are delited to inform you that the first yggdrasil prototype is up on github, with a very early alpha stage build for anyone curious enough to try it out.  
+We know it has been a long time, however we are delighted to inform you that the first Yggdrasil prototype is up on Github, with a very early alpha stage build for anyone curious enough to try it out.  
 If you want to try it out, the link is here:
 
 <https://github.com/yggdrasil-sr/yggdrasil-prototype/releases/>
 
 the screen reader can't do much at the moment, however this is what it can do so far
 
-* like any normal screen reader, it can read most components exposed by the linux accessibility interface, such as buttons, checkboxes, radio buttons, etc.  
-an exception to this is the webview controll and interacting with text boxes, though the latter might be implemented around the end of the week, if everything goes well.
+* like any normal screen reader, it can read most components exposed by the Linux accessibility interface, such as buttons, checkboxes, radio buttons, etc.  
+an exception to this is the WebView control and interacting with text boxes, though the latter might be implemented around the end of the week, if everything goes well.
 
 * some web elements can be navigated through and interacted with, for example links, buttons, checkboxes, forms, etc, even though text inside the webview and quick navigation doesn't work yet.
 
 As we all know, this is the first release of an alpha quality software, so feel free to report bugs by opening issues against the repository. However, here are some known issues that we will attempt to fix in the next couple releases, so no need to report those
 
-* sometimes, the name or text of a controll might not be announced, the speech saying something like ":button", mark the punctuation.  
-This is most likely caused by at-spi sending events to yggdrasil before the controlls actually finished loading, so the controll names and other attributes might not be filled in by the time yggdrasil gets the event, though they aren't null since the data exists somewhere, just didn't exist then.
+* sometimes, the name or text of a control might not be announced, the speech saying something like ":button", mark the punctuation.  
+This is most likely caused by at-spi sending events to Yggdrasil before the controls actually finished loading, so the control names and other attributes might not be filled in by the time Yggdrasil gets the event, though they aren't null since the data exists somewhere, just didn't exist then.
 
-* if a controll uses something else than name or text to label itself, for example tooltips, yggdrasil won't pick those as valid ways of labeling, so it will either speak the same as described above, or it could even say unlabeled in some cases
+* if a control uses something else than name or text to label itself, for example tooltips, Yggdrasil won't pick those as valid ways of labeling, so it will either speak the same as described above, or it could even say unlabeled in some cases
 
-* currently, there's no other way to quit the screen reader but by sending it a keyboard interrupt sygnal, or killing the process in another way. This is so because of the binding generators we work with, they make stuff more complicated, so no keyboard handlers in this release.
+* currently, there's no other way to quit the screen reader but by sending it a keyboard interrupt signal, or killing the process in another way. This is so because of the binding generators we work with, they make stuff more complicated, so no keyboard handlers in this release.
 
 * on some machines, it's reported that the screen reader doesn't read window titles when cycling between them with alt+tab. Currently, we don't know why this is, but we're investigating still.
 
