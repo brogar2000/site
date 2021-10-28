@@ -77,7 +77,7 @@ The OCR system will have two modes:
 
 ### NVDA Style OCR
 
-The OCR results open in a different window, the user being able to click pieces of text for the mouse to perform a click at the desired location in the real window. This would also be the fastest way to perform even arbitrary OCR, as the OCR info is available to addons, so the window doesn't necesarily need to pop open, exactly like NVDA.  
+The ocr results open in a different window, the user being able to click pieces of text for the mouse to perform a click at the desired location in the real window. This would also be the fastest way to perform even arbitrary ocr, as the ocr info is available to addons, so the window doesn't necessarily need to pop open, exactly like nvda.  
 **this is under discussion, if it's indeed possible to do such things with the current open source accessibility stack we have.**
 
 ### Innovative OCR

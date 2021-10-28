@@ -9,6 +9,12 @@ Yggdrasil is a new project that aims to create a better Linux screen reader, wri
 this project, we aim to provide a better screen reading experience than the one we currently have in [Orca][orca].
 A screen reader with all the modern features a Windows or MacOS user would expect from their computers, some of which are outlined below.
 
+- Object navigation
+- OCR
+- customisable navigation commands
+- a powerful add-on mechanism
+- and more.
+
 [orca]: https://wiki.gnome.org/Projects/Orca
 [rust]: https://rust-lang.org/
 
@@ -52,7 +58,7 @@ better than a non-disabled individual.
 
 [wikipedia]: https://en.wikipedia.org/wiki/Yggdrasil
 
-## announcements and news
+## Announcements and News
 
 Important announcements and news about Yggdrasil's development will be published here.
 
@@ -70,8 +76,8 @@ In our view, that can't mean anything else but one step closer to the first Yggd
 
 [spd-rs]: https://github.com/yggdrasil-sr/tts_subsystem
 [spd-sys]: https://github.com/ndarilek/speech-dispatcher-sys
+[tts-rs]: https://github.com/ndarilek/tts-rs
 
-    [tts-rs]: https://github.com/ndarilek/tts-rs
 
 ### the first prototype has been released!
 
