@@ -7,13 +7,13 @@ reputation of being quite painful to use as a daily driver among disabled people
 
 Yggdrasil is a new project that aims to create a better Linux screen reader, written in [Rust][rust]. Through
 this project, we aim to provide a better screen reading experience than the one we currently have in [Orca][orca].
-A screen reader with all the modern features a Windows or MacOS user would expect from their computers, some of which are outlined below.
+A screen reader with all the modern features a Windows or macOS user would expect from their computers, some of which are outlined below.
 
 - Object navigation
 - OCR
-- customisable navigation commands
-- a powerful add-on mechanism
-- and more.
+- Customisable navigation commands
+- A powerful add-on mechanism
+- And more.
 
 [orca]: https://wiki.gnome.org/Projects/Orca
 [rust]: https://rust-lang.org/
@@ -25,7 +25,7 @@ A screen reader with all the modern features a Windows or MacOS user would expec
 We want our users to be able to do anything they wish with our screen reader. Improving support for specific
 programs should ideally be doable without needing to modify Yggdrasil's core code.
 
-We plan to make it easy to write addons primarily in [Lua][lua], with the option to use other languages such as
+We plan to make it easy to write add-ons (primarily in [Lua][lua]), with the option to use other languages such as
 [Rust][rust] in the future for higher performance.
 
 [lua]: https://www.lua.org/
@@ -49,7 +49,7 @@ address that.
 ## Why the Name?
 
 In Norse mythology, [Yggdrasil][wikipedia] is a huge tree around which the nine worlds gravitate. It's seen as a
-unifier of everything, since its roots reach to the center of the earth. It's so large that parts of it exist in
+unifier of everything, since its roots reach to the center of the Earth. It's so large that parts of it exist in
 other universes.
 
 Similarly to the tree of life that unifies everything, We believe accessibility should unify people from across the globe to enjoy a product, with disability no longer
@@ -62,26 +62,26 @@ better than a non-disabled individual.
 
 Important announcements and news about Yggdrasil's development will be published here.
 
-### Minimal speech-dispatcher Bindings Completed
+### Minimal Speech-dispatcher Bindings Completed
 
-As of a few days ago, a [minimal binding to speech-dispatcher][spd-rs] (the TTS system for Linux) was created, which
-wraps the C functions provided by [Nolan's `speech-dispatcher-sys` crate][spd-sys] in a safe Rust API. That means the
-speech component of Yggdrasil can now be implemented after the at-spi components are completed, as well as in other Rust
-projects that need Linux only TTS, or want more control than the [tts crate][tts-rs] gives them.
+As of a few days ago, a [minimal binding to Speech-dispatcher][spd-rs] (the TTS system for Linux) was created, which
+wraps the C functions provided by [Nolan's `Speech-dispatcher-sys` crate][spd-sys] in a safe Rust API. That means the
+speech component of Yggdrasil can now be implemented after the At-spi components are completed, as well as in other Rust
+projects that need Linux-only TTS, or want more control than the [TTS crate][tts-rs] gives them.
 
 These bindings are far from complete, but do provide the essential functionality, such as speaking text, characters and
 keys, and getting and setting voice parameters such as rate, pitch, and volume.
 
-In our view, that can't mean anything else but one step closer to the first Yggdrasil prototype!
+In our view, that means one step closer to the first Yggdrasil prototype!
 
 [spd-rs]: https://github.com/yggdrasil-sr/tts_subsystem
 [spd-sys]: https://github.com/ndarilek/speech-dispatcher-sys
 [tts-rs]: https://github.com/ndarilek/tts-rs
 
-
 ### the first prototype has been released!
 
-We know it has been a long time, however we are delighted to inform you that the first Yggdrasil prototype is up on Github, with a very early alpha stage build for anyone curious enough to try it out.  
+We know it has been a long time, however we are delighted to inform you that the first Yggdrasil prototype is up on GitHub, with a very early alpha stage build for anyone curious enough to try it out.  
+
 If you want to try it out, the link is here:
 
 <https://github.com/yggdrasil-sr/yggdrasil-prototype/releases/>
@@ -89,10 +89,9 @@ If you want to try it out, the link is here:
 the screen reader can't do much at the moment, however this is what it can do so far
 
 * like any normal screen reader, it can read most components exposed by the Linux accessibility interface, such as buttons, checkboxes, radio buttons, etc.  
-an exception to this is the WebView control and interacting with text boxes, though the latter might be implemented around the end of the week, if everything goes well.
+An exception to this is the WebView control and interacting with text boxes, though the latter might be implemented around the end of the week, if everything goes well.
 
 * some web elements can be navigated through and interacted with, for example links, buttons, checkboxes, forms, etc, even though text inside the webview and quick navigation doesn't work yet.
-
 As we all know, this is the first release of an alpha quality software, so feel free to report bugs by opening issues against the repository. However, here are some known issues that we will attempt to fix in the next couple releases, so no need to report those
 
 * sometimes, the name or text of a control might not be announced, the speech saying something like ":button", mark the punctuation.  
@@ -100,11 +99,12 @@ This is most likely caused by at-spi sending events to Yggdrasil before the cont
 
 * if a control uses something else than name or text to label itself, for example tooltips, Yggdrasil won't pick those as valid ways of labeling, so it will either speak the same as described above, or it could even say unlabeled in some cases
 
-* currently, there's no other way to quit the screen reader but by sending it a keyboard interrupt signal, or killing the process in another way. This is so because of the binding generators we work with, they make stuff more complicated, so no keyboard handlers in this release.
+* currently, there's no other way to quit the screen reader other than sending it a keyboard interrupt signal, or killing the process in another way. This is because the binding generators we work with make stuff more complicated, so no keyboard handlers in this release.
 
 * on some machines, it's reported that the screen reader doesn't read window titles when cycling between them with alt+tab. Currently, we don't know why this is, but we're investigating still.
 
 The road to here was a very rough one indeed, however we are excited we could bring this to you, as demo quality as this is. This means much to us, it proves progress is being done, against all odds.  
+
 If you want to see more content from us, consider visiting our website more often, this way you won't lose anything. Furthermore, you will get information from the source of the project, so you can confirm its authenticity for yourself
 
 ## Under Active Development
