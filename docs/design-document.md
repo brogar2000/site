@@ -1,4 +1,4 @@
-# Design of the Yggdrasil Screen Reader
+# Design of the Odilia Screen Reader
 
 ## Event Based Design
 
@@ -45,7 +45,7 @@ an addon, before installation, is a zip archive that's digitally signed to verif
 
 A manifest file, always named "manifest.json"
 
-: Defines metadata about the add-on, such as its name, version, author, minimal Yggdrasil version, capabilities, programming language, documentation links or local documentation, etc.
+: Defines metadata about the add-on, such as its name, version, author, minimal Odilia version, capabilities, programming language, documentation links or local documentation, etc.
 
 The add-on bundle
 
@@ -55,7 +55,7 @@ depending on the language declared in the manifest, the addon will be searched i
     * for Lua add-ons, it will be searched in lib/$addon_name.lua. The addon will be loaded through the Lua module mechanism, a.k.a require.
     * for C or Rust add-ons, it will be searched in lib/$target_tripple/lib$add_on_name.so. This will be loaded through the dynamic linkage procedures in Linux.
 
-**Note:** We may allow addons to be written in other languages, such as C, using a custom add-on subsystem that could be installed as an addon itself. However, installing such add-ons will warn the user that they could cause Yggdrasil to become unstable due to things like memory leaks or segmentation faults, and that we are not responsible for these crashes, which should be reported to the add-on developers. This arises from the fact that add-ons run in the same process as Yggdrasil, so if one crashes, it could bring Yggdrasil down with it. Languages that are memory safe, such as Rust, or garbage collected languages like Lua, won't produce a warning, as the risk of them crashing the entire screen reader is much lower, if not impossible.
+**Note:** We may allow addons to be written in other languages, such as C, using a custom add-on subsystem that could be installed as an addon itself. However, installing such add-ons will warn the user that they could cause Odilia to become unstable due to things like memory leaks or segmentation faults, and that we are not responsible for these crashes, which should be reported to the add-on developers. This arises from the fact that add-ons run in the same process as Odilia, so if one crashes, it could bring Odilia down with it. Languages that are memory safe, such as Rust, or garbage collected languages like Lua, won't produce a warning, as the risk of them crashing the entire screen reader is much lower, if not impossible.
 
 ### Add-on Distribution
 
@@ -67,7 +67,7 @@ Since this is a public addon platform, we will have to make sure our users don't
 
 - In order to be published on the store, an add-on needs to be digitally signed with a certificate that uniquely identifies the entity or organisation responsible for its development and distribution.
 - a static analysis of the archive would commence whenever a new version is uploaded. This could include scanning of the manifest file for dubious sets of entitlements, a submission of the binary files to virustotal, etc.
-- Of course, we will encourage developers to make use of unit testing, and down the road could provide a unit testing framework that simulates the Yggdrasil addon API that can be used to programmatically test addon functionality.
+- Of course, we will encourage developers to make use of unit testing, and down the road could provide a unit testing framework that simulates the Odilia addon API that can be used to programmatically test addon functionality.
 
 However, with a specific setting in the screen reader, the user can allow the installation of extensions not distributed through the store. Then, the addon manager would allow browsing to an addon file and install it.
 
@@ -88,7 +88,7 @@ The OCR results open in a different window, and the user will be able to click p
 
 This mode doesn't attempt to open a new window, instead it overlays the OCR within the current one.  
 
-Based on the control's shape, position and color, Yggdrasil will try to make an accessible tree for that window, recognising the control type and using the captured text as the control text if applicable. Of course, because of the error probability being so high, there would be a possibility for the user to define controls manually based on the mouse position and providing the text, or make improvements to the already generated OCR result, then saving it as a file that can be distributed. Of course such tweaks will be resolution dependent, but probably the utility will try to correct it as much as possible to fit the application by finding the greatest similarity to both the text and cords and control type from the provided database in the OCRed text.
+Based on the control's shape, position and color, Odilia will try to make an accessible tree for that window, recognising the control type and using the captured text as the control text if applicable. Of course, because of the error probability being so high, there would be a possibility for the user to define controls manually based on the mouse position and providing the text, or make improvements to the already generated OCR result, then saving it as a file that can be distributed. Of course such tweaks will be resolution dependent, but probably the utility will try to correct it as much as possible to fit the application by finding the greatest similarity to both the text and cords and control type from the provided database in the OCRed text.
 
 ## Sound Themes (Earcons)
 
@@ -98,7 +98,7 @@ NVDA uses an addon called [audio themes][audio-themes-nvda-addon] together with 
 
 While preliminary support for audio has been implemented in Orca, it hasn't been expanded on since, and as far as we know, the only thing that uses it is progress bar beeps.
 
-Yggdrasil will implement this as an add-on that's part of the distribution, since its another unnecessary feature for the functioning of the screen reader, even though it increases productivity.
+Odilia will implement this as an add-on that's part of the distribution, since its another unnecessary feature for the functioning of the screen reader, even though it increases productivity.
 
 (Eventually), it would also be nice to support positional audio for earcons, so the user knows where the control they're interacting is on screen.
 

@@ -1,11 +1,11 @@
-# The Yggdrasil Screen Reader Project
+# The Odilia Screen Reader Project
 
-## What is Yggdrasil?
+## What is Odilia?
 
 Accessibility on Linux has historically been under-developed, under-maintained, and, therefore, gained a
 reputation of being quite painful to use as a daily driver among disabled people. We want to change that.
 
-Yggdrasil is a new project that aims to create a better Linux screen reader, written in [Rust][rust]. Through
+Odilia is a new project that aims to create a better Linux screen reader, written in [Rust][rust]. Through
 this project, we aim to provide a better screen reading experience than the one we currently have in [Orca][orca].
 A screen reader with all the modern features a Windows or macOS user would expect from their computers, some of which are outlined below.
 
@@ -23,7 +23,7 @@ A screen reader with all the modern features a Windows or macOS user would expec
 ### First-class addon support
 
 We want our users to be able to do anything they wish with our screen reader. Improving support for specific
-programs should ideally be doable without needing to modify Yggdrasil's core code.
+programs should ideally be doable without needing to modify Odilia's core code.
 
 We plan to make it easy to write add-ons (primarily in [Lua][lua]), with the option to use other languages such as
 [Rust][rust] in the future for higher performance.
@@ -41,38 +41,37 @@ intuitive graphical program to modify gestures and define new actions will be av
 In a perfect world, apps would just be accessible automatically, However, that's almost never the case. Therefore, visually impaired people rely on additional tools provided by
 their screen reader, such as object navigation, a way to explore the accessibility tree of an app without relying
 on focus, being then able to discover unfocusable elements that have important information nevertheless. We
-have this in [NVDA][nvda] and other screen readers, but not in Orca and as such, not in Linux. Yggdrasil will
+have this in [NVDA][nvda] and other screen readers, but not in Orca and as such, not in Linux. Odilia will
 address that.
 
 [nvda]: https://www.nvaccess.org/
 
 ## Why the Name?
 
-In Norse mythology, [Yggdrasil][wikipedia] is a huge tree around which the nine worlds gravitate. It's seen as a
-unifier of everything, since its roots reach to the center of the Earth. It's so large that parts of it exist in
-other universes.
+[Odilia of Alsace](odilia) is the patroness saint of good vision in the Catholic and Eastern Orthodox churches.
+Every person on this project has a different relgiion, but we mostly agreed it was a good name.
 
-Similarly to the tree of life that unifies everything, We believe accessibility should unify people from across the globe to enjoy a product, with disability no longer
-being an impediment to the person efficiently using it. They should be able to use technology as well as, if not
-better than a non-disabled individual.
+Spelling: `O D I L I A`
 
-[wikipedia]: https://en.wikipedia.org/wiki/Yggdrasil
+Pronounciation: oh-dill-ee-ah
+
+[odilia]: https://en.wikipedia.org/wiki/Odile_of_Alsace
 
 ## Announcements and News
 
-Important announcements and news about Yggdrasil's development will be published here.
+Important announcements and news about Odilia's development will be published here.
 
 ### Minimal Speech-dispatcher Bindings Completed
 
 As of a few days ago, a [minimal binding to Speech-dispatcher][spd-rs] (the TTS system for Linux) was created, which
 wraps the C functions provided by [Nolan's `Speech-dispatcher-sys` crate][spd-sys] in a safe Rust API. That means the
-speech component of Yggdrasil can now be implemented after the At-spi components are completed, as well as in other Rust
+speech component of Odilia can now be implemented after the At-spi components are completed, as well as in other Rust
 projects that need Linux-only TTS, or want more control than the [TTS crate][tts-rs] gives them.
 
 These bindings are far from complete, but do provide the essential functionality, such as speaking text, characters and
 keys, and getting and setting voice parameters such as rate, pitch, and volume.
 
-In our view, that means one step closer to the first Yggdrasil prototype!
+In our view, that means one step closer to the first Odilia prototype!
 
 [spd-rs]: https://github.com/yggdrasil-sr/tts_subsystem
 [spd-sys]: https://github.com/ndarilek/speech-dispatcher-sys
@@ -80,7 +79,7 @@ In our view, that means one step closer to the first Yggdrasil prototype!
 
 ### the first prototype has been released!
 
-We know it has been a long time, however we are delighted to inform you that the first Yggdrasil prototype is up on GitHub, with a very early alpha stage build for anyone curious enough to try it out.  
+We know it has been a long time, however we are delighted to inform you that the first Odilia prototype is up on GitHub, with a very early alpha stage build for anyone curious enough to try it out.  
 
 If you want to try it out, the link is here:
 
@@ -95,9 +94,9 @@ An exception to this is the WebView control and interacting with text boxes, tho
 As we all know, this is the first release of an alpha quality software, so feel free to report bugs by opening issues against the repository. However, here are some known issues that we will attempt to fix in the next couple releases, so no need to report those
 
 * sometimes, the name or text of a control might not be announced, the speech saying something like ":button", mark the punctuation.  
-This is most likely caused by at-spi sending events to Yggdrasil before the controls actually finished loading, so the control names and other attributes might not be filled in by the time Yggdrasil gets the event, though they aren't null since the data exists somewhere, just didn't exist then.
+This is most likely caused by at-spi sending events to Odilia before the controls actually finished loading, so the control names and other attributes might not be filled in by the time Odilia gets the event, though they aren't null since the data exists somewhere, just didn't exist then.
 
-* if a control uses something else than name or text to label itself, for example tooltips, Yggdrasil won't pick those as valid ways of labeling, so it will either speak the same as described above, or it could even say unlabeled in some cases
+* if a control uses something else than name or text to label itself, for example tooltips, Odilia won't pick those as valid ways of labeling, so it will either speak the same as described above, or it could even say unlabeled in some cases
 
 * currently, there's no other way to quit the screen reader other than sending it a keyboard interrupt signal, or killing the process in another way. This is because the binding generators we work with make stuff more complicated, so no keyboard handlers in this release.
 
@@ -114,7 +113,7 @@ see more exciting news and documentation!
 
 ## Website / Documentation License
 
-Copyright (c) 2021 the Yggdrasil contributors.
+Copyright (c) 2021 the Odilia contributors.
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
