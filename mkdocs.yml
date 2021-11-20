@@ -1,7 +1,7 @@
-site_name: Yggdrasil Screen Reader
+site_name: Odilia Screen Reader
 site_url: https://yggdrasil-sr.github.io
-site_author: The Yggdrasil contributors
-copyright: Copyright © 2021 the Yggdrasil contributors
+site_author: The Odilia contributors
+copyright: Copyright © 2021 the Odilia contributors
 site_description: |
   A modern, feature-rich screen reader for the Linux desktop, built in Rust.
 
