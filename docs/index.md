@@ -11,7 +11,7 @@ A screen reader with all the modern features a Windows or macOS user would expec
 
 - Object navigation
 - OCR
-- Customisable navigation commands
+- Customizable navigation commands
 - A powerful add-on mechanism
 - And more.
 
@@ -40,7 +40,7 @@ intuitive graphical program to modify gestures and define new actions will be av
 
 In a perfect world, apps would just be accessible automatically, However, that's almost never the case. Therefore, visually impaired people rely on additional tools provided by
 their screen reader, such as object navigation, a way to explore the accessibility tree of an app without relying
-on focus, being then able to discover unfocusable elements that have important information nevertheless. We
+on focus, being then able to discover unfocusable elements that have important information, nevertheless. We
 have this in [NVDA][nvda] and other screen readers, but not in Orca and as such, not in Linux. Odilia will
 address that.
 
@@ -49,11 +49,11 @@ address that.
 ## Why the Name?
 
 [Odilia of Alsace](odilia) is the patroness saint of good vision in the Catholic and Eastern Orthodox churches.
-Every person on this project has a different relgiion, but we mostly agreed it was a good name.
+Every person on this project has a different religion, but we mostly agreed it was a good name.
 
 Spelling: `O D I L I A`
 
-Pronounciation: oh-dill-ee-ah
+Pronunciation: oh-dill-ee-ah
 
 [odilia]: https://en.wikipedia.org/wiki/Odile_of_Alsace
 
@@ -66,7 +66,7 @@ Important announcements and news about Odilia's development will be published he
 As of a few days ago, a [minimal binding to Speech-dispatcher][spd-rs] (the TTS system for Linux) was created, which
 wraps the C functions provided by [Nolan's `Speech-dispatcher-sys` crate][spd-sys] in a safe Rust API. That means the
 speech component of Odilia can now be implemented after the At-spi components are completed, as well as in other Rust
-projects that need Linux-only TTS, or want more control than the [TTS crate][tts-rs] gives them.
+projects that need Linux-only TTS or want more control than the [TTS crate][tts-rs] gives them.
 
 These bindings are far from complete, but do provide the essential functionality, such as speaking text, characters and
 keys, and getting and setting voice parameters such as rate, pitch, and volume.
@@ -85,22 +85,22 @@ If you want to try it out, the link is here:
 
 <https://github.com/yggdrasil-sr/yggdrasil-prototype/releases/>
 
-the screen reader can't do much at the moment, however this is what it can do so far
+the screen reader can't do much now, however this is what it can do so far:
 
-* like any normal screen reader, it can read most components exposed by the Linux accessibility interface, such as buttons, checkboxes, radio buttons, etc.  
+* Like any normal screen reader, it can read most components exposed by the Linux accessibility interface, such as buttons, checkboxes, radio buttons, etc.  
 An exception to this is the WebView control and interacting with text boxes, though the latter might be implemented around the end of the week, if everything goes well.
 
-* some web elements can be navigated through and interacted with, for example links, buttons, checkboxes, forms, etc, even though text inside the webview and quick navigation doesn't work yet.
-As we all know, this is the first release of an alpha quality software, so feel free to report bugs by opening issues against the repository. However, here are some known issues that we will attempt to fix in the next couple releases, so no need to report those
+* Some web elements can be navigated through and interacted with, for example links, buttons, checkboxes, forms, etc., even though text inside the WebView and quick navigation doesn't work yet.
+As we all know, this is the first release of an alpha quality software, so feel free to report bugs by opening issues against the repository. However, here are some known issues that we will attempt to fix in the next couple releases, so no need to report those:
 
-* sometimes, the name or text of a control might not be announced, the speech saying something like ":button", mark the punctuation.  
+* Sometimes, the name or text of a control might not be announced, the speech saying something like ":button", mark the punctuation.  
 This is most likely caused by at-spi sending events to Odilia before the controls actually finished loading, so the control names and other attributes might not be filled in by the time Odilia gets the event, though they aren't null since the data exists somewhere, just didn't exist then.
 
-* if a control uses something else than name or text to label itself, for example tooltips, Odilia won't pick those as valid ways of labeling, so it will either speak the same as described above, or it could even say unlabeled in some cases
+* If a control uses something else than name or text to label itself, for example tooltips, Odilia won't pick those as valid ways of labeling, so it will either speak the same as described above, or it could even say unlabeled in some cases
 
-* currently, there's no other way to quit the screen reader other than sending it a keyboard interrupt signal, or killing the process in another way. This is because the binding generators we work with make stuff more complicated, so no keyboard handlers in this release.
+* Currently, there's no other way to quit the screen reader other than sending it a keyboard interrupt signal or killing the process in another way. This is because the binding generators we work with make stuff more complicated, so no keyboard handlers in this release.
 
-* on some machines, it's reported that the screen reader doesn't read window titles when cycling between them with alt+tab. Currently, we don't know why this is, but we're investigating still.
+* On some machines, it's reported that the screen reader doesn't read window titles when cycling between them with Alt+Tab. Currently, we don't know why this is, but we're investigating still.
 
 The road to here was a very rough one indeed, however we are excited we could bring this to you, as demo quality as this is. This means much to us, it proves progress is being done, against all odds.  
 
